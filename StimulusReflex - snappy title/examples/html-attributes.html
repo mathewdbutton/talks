@@ -1,0 +1,28 @@
+<!-- StimlusJS example -->
+<!--HTML from anywhere-->
+<div data-controller="hello">
+  <input data-target="hello.name" type="text">
+
+  <button data-action="click->hello#greet">
+    Greet
+  </button>
+
+  <span data-target="hello.output">
+  </span>
+</div>
+
+
+<!-- Html Attributes example with stimulus controller -->
+<!-- app/views/pages/index.html.erb -->
+<a href="#" data-controller="counter" data-action="click->counter#increment">
+  Increment <%= @count %>
+</a>
+
+<!-- Html Attributes example no stimulus controller -->
+<!-- app/views/pages/index.html.erb -->
+<a href="#"
+  data-reflex="click->Counter#increment"
+  data-step="1"
+  data-count="<%= @count.to_i %>">
+  Increment <%= @count.to_i %>
+</a>
